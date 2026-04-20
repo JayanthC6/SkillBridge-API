@@ -1,6 +1,5 @@
 import random
 from datetime import date, datetime, time, timedelta
-
 from src.auth_utils import hash_password
 from src.database import SessionLocal
 from src.models import (

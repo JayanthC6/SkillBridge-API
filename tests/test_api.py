@@ -1,9 +1,7 @@
 from datetime import date
 from datetime import time as dt_time
-
 import pytest
 from jose import jwt
-
 from src.auth_utils import hash_password
 from src.config import SECRET_KEY
 from src.models import Batch, BatchStudent, Session, User, UserRole
@@ -11,10 +9,8 @@ from src.models import Batch, BatchStudent, Session, User, UserRole
 ALGORITHM = "HS256"
 pytestmark = pytest.mark.asyncio
 
-
 def _decode_token(token: str) -> dict:
     return jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
-
 
 async def test_student_signup_and_login(client):
     signup_payload = {
@@ -38,7 +34,6 @@ async def test_student_signup_and_login(client):
     assert decoded.get("role") == "student"
     assert decoded.get("user_id")
 
-
 async def test_trainer_create_session(client):
     institution_signup = await client.post(
         "/auth/signup",
@@ -51,7 +46,6 @@ async def test_trainer_create_session(client):
     )
     institution_token = institution_signup.json()["access_token"]
     institution_id = _decode_token(institution_token)["user_id"]
-
     trainer_signup = await client.post(
         "/auth/signup",
         json={
@@ -90,7 +84,6 @@ async def test_trainer_create_session(client):
         headers={"Authorization": f"Bearer {trainer_token}"},
     )
     assert session_response.status_code in (200, 201)
-
 
 async def test_student_mark_attendance(client, db_session):
     db = db_session
@@ -151,11 +144,9 @@ async def test_student_mark_attendance(client, db_session):
     )
     assert mark_response.status_code in (200, 201)
 
-
 async def test_monitoring_post_returns_405(client):
     response = await client.post("/monitoring/attendance", json={})
     assert response.status_code == 405
-
 
 async def test_no_token_returns_401(client):
     response = await client.get("/programme/summary")

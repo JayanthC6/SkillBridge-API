@@ -6,8 +6,6 @@ from src.database import engine
 from src import models
 
 app = FastAPI(title="SkillBridge API")
-
-
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -16,11 +14,9 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-
 @app.get("/")
 def health_check():
     return {"status": "ok"}
-
 
 def register_routers() -> None:
     app.include_router(auth.router, prefix="/auth", tags=["auth"])
@@ -28,7 +24,6 @@ def register_routers() -> None:
     app.include_router(sessions.router, tags=["sessions"])
     app.include_router(attendance.router, tags=["attendance"])
     app.include_router(summaries.router, tags=["summaries"])
-
 
 register_routers()
 

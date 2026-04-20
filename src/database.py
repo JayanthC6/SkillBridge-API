@@ -1,6 +1,5 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import declarative_base, sessionmaker
-
 from src.config import DATABASE_URL
 
 if not DATABASE_URL:
@@ -13,7 +12,6 @@ Base = declarative_base()
 from src import models  # noqa: F401
 
 Base.metadata.create_all(bind=engine)
-
 
 def get_db():
     db = SessionLocal()
