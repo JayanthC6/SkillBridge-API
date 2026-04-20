@@ -1,4 +1,6 @@
-# SkillBridge API
+# SkillBridge API - Attendance Management System
+
+Backend REST API for SkillBridge, a state-level skilling programme prototype. Built with FastAPI, SQLAlchemy, and PostgreSQL, featuring role-based access control (RBAC) and a specialized dual-token JWT authentication architecture.
 
 ## 1. Live API Base URL
 
