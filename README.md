@@ -2,7 +2,7 @@
 
 ## 1. Live API Base URL
 
-`[https://skillbridge-api-ya76.onrender.com]`
+https://skillbridge-api-ya76.onrender.com
 
 ## 2. Local Setup Instructions
 
