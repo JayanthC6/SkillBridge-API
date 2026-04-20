@@ -8,7 +8,7 @@ https://skillbridge-api-ya76.onrender.com
 
 1. **Clone the repository and open it**
    ```bash
-   git clone <your-repo-url>
+   git clone <https://github.com/JayanthC6/SkillBridge-API>
    cd skillbridge-api
    ```
 
