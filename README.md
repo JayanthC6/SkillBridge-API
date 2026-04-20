@@ -2,7 +2,7 @@
 
 ## 1. Live API Base URL
 
-`[Pending Deployment URL]`
+`[https://skillbridge-api-ya76.onrender.com]`
 
 ## 2. Local Setup Instructions
 
