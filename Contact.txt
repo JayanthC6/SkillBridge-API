@@ -2,3 +2,6 @@ Name: Jayanth C
 Email: jayanthjayanthc96@gmail.com
 Phone: 8088912064
 Github link: https://github.com/JayanthC6
+
+Challenging part: The most challenging part of the build was debugging why SQLAlchemy wasn't creating tables on Neon during the FastAPI startup, which I ultimately solved by decoupling the database
+ initialization into a standalone script.
